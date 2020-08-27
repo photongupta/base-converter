@@ -14,9 +14,9 @@ class BaseConverter extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange({target}, base) {
-    if (doesBelongToBase(target.value, base)) {
-      this.setState(() => ({value: target.value, base}));
+  handleChange(value, base) {
+    if (doesBelongToBase(value, base)) {
+      this.setState(() => ({value, base}));
     }
   }
 

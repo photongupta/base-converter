@@ -6,7 +6,10 @@ const Input = function ({currentInput, base, onChange}) {
   return (
     <div>
       <label>Base {base} </label>
-      <input onChange={(event) => onChange(event, base)} value={value} />
+      <input
+        onChange={({target}) => onChange(target.value, base)}
+        value={value}
+      />
     </div>
   );
 };
