@@ -1,6 +1,12 @@
 import React from 'react';
 import Input from './input';
 
+const doesBelongToBase = function (number, base) {
+  return number
+    .split('')
+    .every((digit) => Number.isInteger(parseInt(digit, base)));
+};
+
 class BaseConverter extends React.Component {
   constructor(props) {
     super(props);
@@ -9,11 +15,7 @@ class BaseConverter extends React.Component {
   }
 
   handleChange({target}, base) {
-    if (
-      target.value
-        .split('')
-        .every((digit) => Number.isInteger(parseInt(digit, base)))
-    ) {
+    if (doesBelongToBase(target.value, base)) {
       this.setState((state) => ({value: target.value, base}));
     }
   }
