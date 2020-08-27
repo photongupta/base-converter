@@ -5,11 +5,14 @@ const Input = function ({currentInput, base, onChange}) {
     ? parseInt(currentInput.value, currentInput.base).toString(base)
     : currentInput.value;
   return (
-    <input
-      onChange={(event) => onChange(event, base)}
-      base={base}
-      value={value}
-    />
+    <div>
+      <label>Base {base} </label>
+      <input
+        onChange={(event) => onChange(event, base)}
+        base={base}
+        value={value}
+      />
+    </div>
   );
 };
 

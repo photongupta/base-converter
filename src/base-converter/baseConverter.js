@@ -16,13 +16,13 @@ class BaseConverter extends React.Component {
 
   handleChange({target}, base) {
     if (doesBelongToBase(target.value, base)) {
-      this.setState((state) => ({value: target.value, base}));
+      this.setState(() => ({value: target.value, base}));
     }
   }
 
   render() {
     const baseList = Array.from(Array(15).keys());
-    const inputs = baseList.map((_, index) => (
+    const inputBoxes = baseList.map((_, index) => (
       <Input
         key={index}
         currentInput={this.state}
@@ -30,7 +30,7 @@ class BaseConverter extends React.Component {
         onChange={this.handleChange}
       />
     ));
-    return <div>{inputs}</div>;
+    return <div>{inputBoxes}</div>;
   }
 }
 
