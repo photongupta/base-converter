@@ -6,7 +6,7 @@ const App = function () {
   return (
     <div className="App">
       <h3>Base-Converter</h3>
-      <BaseConverter />
+      <BaseConverter lastBase={15} />
     </div>
   );
 };
