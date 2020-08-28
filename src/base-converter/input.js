@@ -9,6 +9,7 @@ const Input = function ({currentInput, base, onChange}) {
       <input
         onChange={({target}) => onChange(target.value, base)}
         value={value}
+        className="inputBox"
       />
     </div>
   );
