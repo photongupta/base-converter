@@ -16,7 +16,7 @@ class BaseConverter extends React.Component {
 
   handleChange(value, base) {
     if (doesBelongToBase(value, base)) {
-      this.setState(() => ({value: parseInt(value, 10), base}));
+      this.setState(() => ({value: parseInt(value, base), base}));
     }
   }
 
