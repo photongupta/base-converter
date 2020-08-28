@@ -1,8 +1,7 @@
 import React from 'react';
 
-const Input = function ({currentInput, base, onChange}) {
-  const {value: ipValue, base: ipBase} = currentInput;
-  const value = ipValue ? parseInt(ipValue, ipBase).toString(base) : ipValue;
+const Input = function ({number, onChange, base}) {
+  const value = number ? number.toString(base) : number;
   return (
     <div>
       <label>Base {base} </label>
