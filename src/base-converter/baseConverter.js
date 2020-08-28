@@ -21,7 +21,7 @@ class BaseConverter extends React.Component {
   }
 
   render() {
-    const baseList = Array.from(Array(this.props.lastBase).keys());
+    const baseList = Array.from(Array(this.props.lastBase - 1).keys());
     const inputBoxes = baseList.map((id) => (
       <Input
         key={id}
