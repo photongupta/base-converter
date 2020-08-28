@@ -10,13 +10,13 @@ const doesBelongToBase = function (number, base) {
 class BaseConverter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: 0};
+    this.state = {number: 0};
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(value, base) {
     if (doesBelongToBase(value, base)) {
-      this.setState(() => ({value: parseInt(value, base), base}));
+      this.setState(() => ({number: parseInt(value, base)}));
     }
   }
 
@@ -25,7 +25,7 @@ class BaseConverter extends React.Component {
     const inputBoxes = baseList.map((id) => (
       <Input
         key={id}
-        number={this.state.value}
+        number={this.state.number}
         base={id + 2}
         onChange={this.handleChange}
       />
